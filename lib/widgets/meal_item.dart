@@ -5,9 +5,11 @@ import 'package:meal_app/widgets/meal_item_trait.dart';
 import 'package:transparent_image/transparent_image.dart';
 
 class MealItem extends StatelessWidget {
-  const MealItem({super.key, required this.meal, required this.onToggleFav});
+  const MealItem({
+    super.key,
+    required this.meal,
+  });
   final Meal meal;
-  final void Function(Meal meal) onToggleFav;
 
   String get affordability {
     return meal.affordability.name[0].toUpperCase() +
@@ -24,7 +26,6 @@ class MealItem extends StatelessWidget {
       MaterialPageRoute(
         builder: (ctx) => MealDetailScreen(
           meal: meal,
-          onToggleFav: onToggleFav,
         ),
       ),
     );
